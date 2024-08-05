@@ -5,6 +5,7 @@ This project is a real-time people detection and face recognition system using O
 ## Table of Contents
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Known Faces](#known_faces)
 - [Usage](#usage)
 - [Code Explanation](#code-explanation)
 - [Database Schema](#database-schema)
@@ -40,6 +41,14 @@ This project is a real-time people detection and face recognition system using O
 4. **Prepare the known faces directory:**
     - Create a directory named `known_faces` in the project root.
     - Add images of known people to this directory. The image filenames should reflect the names of the people (e.g., `name1.jpg`, `name2.jpg`, `alex1.png`, etc.).
+  
+
+## Known Faces
+
+The known_faces folder contains the images of the faces to be detected.
+Delete the sample.jpg file from the folder and upload your pictures, focusing on your face.
+The images of face should clear, with ample background light, and minimal thing in the background.
+
 
 ## Usage
 
