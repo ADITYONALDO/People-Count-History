@@ -18,6 +18,7 @@ This project is a real-time people detection and face recognition system using O
 - OpenCV
 - NumPy
 - SQLite3
+- Paste the lbpcascade_frontalface.xml file in the required directory. Refer the word file for complete explanation.
 
 ## Installation
 
