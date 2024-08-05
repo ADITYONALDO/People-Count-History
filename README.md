@@ -5,7 +5,7 @@ This project is a real-time people detection and face recognition system using O
 ## Table of Contents
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Known_Faces](#known_faces)
+- [Known Faces](#known-faces)
 - [Usage](#usage)
 - [Code Explanation](#code-explanation)
 - [Database Schema](#database-schema)
