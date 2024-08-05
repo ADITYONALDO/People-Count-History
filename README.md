@@ -45,9 +45,11 @@ This project is a real-time people detection and face recognition system using O
 
 ## Known Faces
 
-The known_faces folder contains the images of the faces to be detected.
-Delete the sample.jpg file from the folder and upload your pictures, focusing on your face.
-The images of face should clear, with ample background light, and minimal thing in the background.
+1. The known_faces folder contains the images of the faces to be detected.
+   
+2. Delete the sample.jpg file from the folder and upload your pictures, focusing on your face.
+   
+4. The images of face should clear, with ample background light, and minimal thing in the background.
 
 
 ## Usage
