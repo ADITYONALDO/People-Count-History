@@ -66,12 +66,12 @@ def detect_and_recognize(frame):
                 min_distance = distance
                 name = known_name
         
-        # Set a distance threshold for recognizing faces
+        # Setting a distance threshold for recognizing faces
         threshold = 5200
         if min_distance > threshold:
             name = "Unknown"
         
-        # Include timestamp for each detection
+        # To timestamp for each detection
         timestamp = datetime.now()
         face_data.append((x, y, w, h, name, timestamp))
     
@@ -82,7 +82,7 @@ def update_or_insert_visit(name, timestamp):
     formatted_timestamp = timestamp.strftime("%d/%m/%Y %I:%M %p")  # 12-hour format with AM/PM
 
     try:
-        # Check if there is an existing entry for today and the given name
+        # To check if there is an existing entry for today and the given name
         c.execute('''
             SELECT ID, LastVisitTimestamp, NewVisitTimestamp
             FROM visits
@@ -95,7 +95,7 @@ def update_or_insert_visit(name, timestamp):
             last_visited_time = datetime.strptime(last_visited, "%d/%m/%Y %I:%M %p")
             current_time = datetime.strptime(formatted_timestamp, "%d/%m/%Y %I:%M %p")
             
-            # Update NewVisitedTimestamp only if current time is greater than last visited time or new visited time
+            # To Update NewVisitTimestamp only if current time is greater than last visit time or new visit time
             if new_visited is None and current_time > last_visited_time:
                 c.execute('''
                     UPDATE visits
@@ -109,7 +109,7 @@ def update_or_insert_visit(name, timestamp):
                     WHERE ID = ?
                 ''', (formatted_timestamp, visit_id))
         else:
-            # Insert a new entry if none exists for that name on the current day
+            # To Insert a new entry if none exists for that name on the current day
             c.execute('''
                 INSERT INTO visits (Name, LastVisitTimestamp, NewVisitTimestamp)
                 VALUES (?, ?, NULL)
@@ -137,7 +137,7 @@ while True:
         cv2.putText(frame, f"{name} - {timestamp.strftime('%d/%m/%Y %I:%M %p')}", (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (255, 0, 0), 2)
         
         if name != "Unknown":
-            # Check if the name has been detected within the last minute
+            # To Check if the name has been detected within the last minute
             if name not in detected_names or timestamp - detected_names[name] > timedelta(minutes=1):
                 update_or_insert_visit(name, timestamp)
                 detected_names[name] = timestamp
